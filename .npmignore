@@ -60,5 +60,10 @@ typings/
 # Git configs
 .gitignore
 
-# Unit tests
-__test__
+# Tests
+__fixtures__
+__mocks__
+__tests__
+*.test.js
+*.spec.js
+jest.config.js
