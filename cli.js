@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 const path = require("path");
-const { promises: { readFile, writeFile } } = require("fs");
+const { readFile, writeFile } = require("fs").promises;
 
 const yargs = require("yargs");
 const getStdin = require("get-stdin");
 
-const filterPackageDeps = require("./lib/filterPackageDeps");
-const filterPackageLockDeps = require("./lib/filterPackageLockDeps");
+const { filterPackageDeps } = require("./lib/filterPackageDeps");
+const { filterPackageLockDeps } = require("./lib/filterPackageLockDeps");
 
 const { argv } = yargs
   .describe("type", "File type to filter")
@@ -65,6 +65,6 @@ const writeOutput = (output, content) => {
   } else {
     process.stdout.write(content);
   }
-}
+};
 
 main(argv);
